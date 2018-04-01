@@ -3,45 +3,74 @@ import { Fact, IFact } from './fact';
 import { FactWithDate } from './fact-with-date';
 import { FactsWithDate, IFactsWithDate } from './facts-with-date';
 import { Facts, IFacts } from './facts';
+import { FusionChartPieChartData, FusionChart, LabelValue } from './fc-piechart';
+import { data as mockData } from '../hs-profits-calculator-mock-default';
 
-export interface IHSProfitCalculatorData {
+export interface IHSProfitsCalculatorData {
   fromDate(): Date;
   currency(): ICurrency;
   totalCostsEoy(): IFact;
   totalCostsEoyByCategory(): IFacts;
   costsEoyByDate(): IFactsWithDate;
-  totalProfitEoy(): IFact;
-  totalProfitEoyByCategory(): IFacts;
+  totalProfitsEoy(): IFact;
+  totalProfitsEoyByCategory(): IFacts;
 }
 
-export class HsProfitCalculatorData implements IHSProfitCalculatorData {
+export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
   _fromDate: Date;
   _currency: ICurrency;
   _totalCostsEoy: IFact;
   _totalCostsEoyByCategory: IFacts;
   _costsEoyByDate: IFactsWithDate;
-  _totalProfitEoy: IFact;
-  _totalProfitEoyByCategory: IFacts;
+  _totalProfitsEoy: IFact;
+  _totalProfitsEoyByCategory: IFacts;
 
-  static fromObject(origin: any): HsProfitCalculatorData {
+  static fromFake(): HsProfitsCalculatorData {
+    return HsProfitsCalculatorData.fromObject(mockData as any);
+  }
+
+  static fromObject(origin: {
+      fromDate: string,
+      currency: { code: string, symbol: string, name: string }
+      totalCostsEoy: { category: string, amount: number },
+      totalCostsEoyByCategory: [{ category: string, amount: number }],
+      costsEoyByDate: [{ category: string, amount: number, date: Date }],
+      totalProfitsEoy: { category: string, amount: number },
+      totalProfitsEoyByCategory:  [{ category: string, amount: number }]
+    }): HsProfitsCalculatorData {
     return new this(
-      origin.fromDate,
+      new Date(origin.fromDate),
       Currency.fromObject(origin.currency),
       Fact.fromObject(origin.totalCostsEoy),
       Facts.fromObject(origin.totalCostsEoyByCategory),
       FactsWithDate.fromObject(origin.costsEoyByDate),
-      Fact.fromObject(origin.totalProfitEoy),
-      Facts.fromObject(origin.totalProfitEoyByCategory)
+      Fact.fromObject(origin.totalProfitsEoy),
+      Facts.fromObject(origin.totalProfitsEoyByCategory)
     );
   }
+
+  public toFusionChartPieChartData(): FusionChartPieChartData {
+    return new FusionChartPieChartData(
+      new FusionChart(
+        'Composition by income type',
+        true,
+        '€',
+        'hulk-light',
+        true
+      ),
+      this.totalCostsEoyByCategory()
+       .items().map(i => new LabelValue(i.category(), i.amount()))
+    );
+  }
+
   constructor(
     fromDate: Date,
     currency: ICurrency,
     totalCostsEoy: IFact,
     totalCostsEoyByCategory: IFacts,
     costsEoyByDate: IFactsWithDate,
-    totalProfitEoy: IFact,
-    totalProfitEoyByCategory: IFacts
+    totalProfitsEoy: IFact,
+    totalProfitsEoyByCategory: IFacts
   ) {
     if (fromDate == null) {
       throw new Error('fromDate is null');
@@ -68,15 +97,15 @@ export class HsProfitCalculatorData implements IHSProfitCalculatorData {
     }
     this._costsEoyByDate = costsEoyByDate;
 
-    if (totalProfitEoy == null) {
-      throw new Error('totalProfitEoy is null');
+    if (totalProfitsEoy == null) {
+      throw new Error('totalProfitsEoy is null');
     }
-    this._totalProfitEoy = totalProfitEoy;
+    this._totalProfitsEoy = totalProfitsEoy;
 
-    if (totalProfitEoyByCategory == null) {
+    if (totalProfitsEoyByCategory == null) {
       throw new Error('totalProfixEoyByCategory is null');
     }
-    this._totalProfitEoyByCategory = totalProfitEoyByCategory;
+    this._totalProfitsEoyByCategory = totalProfitsEoyByCategory;
   }
 
   fromDate(): Date {
@@ -94,10 +123,10 @@ export class HsProfitCalculatorData implements IHSProfitCalculatorData {
   costsEoyByDate(): IFactsWithDate {
     return this._costsEoyByDate;
   }
-  totalProfitEoy(): IFact {
-    return this._totalProfitEoy;
+  totalProfitsEoy(): IFact {
+    return this._totalProfitsEoy;
   }
-  totalProfitEoyByCategory(): IFacts {
-    return this._totalProfitEoyByCategory;
+  totalProfitsEoyByCategory(): IFacts {
+    return this._totalProfitsEoyByCategory;
   }
 }

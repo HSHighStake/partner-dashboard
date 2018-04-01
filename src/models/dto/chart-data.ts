@@ -1,8 +1,8 @@
-import { IHSProfitCalculatorData } from './hs-profit-calculator-data';
+import { IHSProfitsCalculatorData } from './hs-profits-calculator-data';
 
 export class PieChartData {
-  _origin: IHSProfitCalculatorData;
-  constructor(value: IHSProfitCalculatorData) {
+  _origin: IHSProfitsCalculatorData;
+  constructor(value: IHSProfitsCalculatorData) {
     if (value == null) {
       throw new Error('value is null');
     }

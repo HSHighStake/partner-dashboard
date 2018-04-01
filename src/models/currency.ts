@@ -8,8 +8,8 @@ export class Currency implements ICurrency {
   _name: string;
   _symbol: string;
   _isoCode: string;
-  static fromObject(origin: { name: string, symbol: string, isoCode: string}): Currency {
-    return new this(origin.name, origin.isoCode, origin.symbol);
+  static fromObject(origin: { name: string, symbol: string, code: string}): Currency {
+    return new this(origin.name, origin.code, origin.symbol);
   }
   static fromICurrency(origin: ICurrency) {
     return new this(origin.name(), origin.isoCode(), origin.symbol());

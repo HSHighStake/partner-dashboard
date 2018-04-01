@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HsProfitsCalculatorService } from '../hs-profits-calculator.service';
+import { FusionChart } from '../../models/dto/fc-piechart';
 
 @Component({
   selector: 'app-hs-piechart',
@@ -14,35 +16,43 @@ export class HsPiechartComponent {
   dataSource;
   title = 'HS High Stake income Composition';
 
-  constructor() {
-
+  constructor(private dataService: HsProfitsCalculatorService) {
+    this.dataSource = dataService.fusionChartPieChartData();
+    /*
     this.dataSource = {
-      'chart': {
-        'caption': 'Composition by income type',
-        'showValues': '1',
-        'numberSuffix': '€',
-        'theme': 'hulk-light',
-        'enableMultiSlicing': '0'
+      chart: {
+        caption: 'Composition by income type',
+        showValues: '1',
+        numberSuffix: '€',
+        theme: 'hulk-light',
+        enableMultiSlicing: '0'
       },
-      'data': [{
-        'label': 'Hotel',
-        'value': '22000'
-      }, {
-        'label': 'Commute',
-        'value': '6000'
-      }, {
-        'label': 'Social security contributions',
-        'value': '25000'
-      }, {
-        'label': 'Royalty',
-        'value': '15000'
-      }, {
-        'label': 'Basic salary',
-        'value': '50000'
-      }, {
-        'label': 'Bonus',
-        'value': '32000'
-      }]
-    };
+      data: [
+        {
+          label: 'Hotel',
+          value: 22000
+        },
+        {
+          label: 'Commute',
+          value: '6000'
+        },
+        {
+          label: 'Social security contributions',
+          value: '25000'
+        },
+        {
+          label: 'Royalty',
+          value: '15000'
+        },
+        {˝
+          label: 'Basic salary',
+          value: '50000'
+        },
+        {
+          label: 'Bonus',∏
+          value: '32000'
+        }
+      ]
+    };*/
   }
 }
