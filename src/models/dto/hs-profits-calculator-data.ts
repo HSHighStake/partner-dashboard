@@ -26,6 +26,9 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
   _totalProfitsEoyByCategory: IFacts;
 
   static fromFake(): HsProfitsCalculatorData {
+  // @todo Figure out why we have to use "as any" to prevent
+  // errors on tlint and compiling. I guess there is a problem on matching //Array<> or {}[]?
+
     return HsProfitsCalculatorData.fromObject(mockData as any);
   }
 
