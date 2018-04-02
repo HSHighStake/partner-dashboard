@@ -10,7 +10,7 @@ export class HsSalaryFormularComponent {
   technologies;
   types;
 
-  // @todo This should a developed as a small service.
+  // @todo #3 This should a developed as a small service.
   constructor() {
     this.types = [
       {
