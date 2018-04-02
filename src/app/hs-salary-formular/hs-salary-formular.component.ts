@@ -11,6 +11,7 @@ export class HsSalaryFormularComponent {
   types;
 
   // @todo #3 This should a developed as a small service.
+  // @todo #3 Whats the problem!
   constructor() {
     this.types = [
       {
