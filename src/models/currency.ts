@@ -1,25 +1,19 @@
 export interface ICurrency {
-  name(): string;
   symbol(): string;
   isoCode(): string;
 }
 
 export class Currency implements ICurrency {
-  _name: string;
   _symbol: string;
   _isoCode: string;
-  static fromObject(origin: { name: string, symbol: string, code: string}): Currency {
-    return new this(origin.name, origin.code, origin.symbol);
+  static fromObject(origin: { symbol: string, code: string}): Currency {
+    return new this(origin.code, origin.symbol);
   }
   static fromICurrency(origin: ICurrency) {
-    return new this(origin.name(), origin.isoCode(), origin.symbol());
+    return new this(origin.isoCode(), origin.symbol());
   }
 
-  constructor(name: string, isoCode: string, symbol: string) {
-    if (name == null) {
-      throw new Error('name is null');
-    }
-    this._name = name;
+  constructor(isoCode: string, symbol: string) {
 
     if (isoCode == null) {
       throw new Error('isoCode is null');
@@ -30,10 +24,6 @@ export class Currency implements ICurrency {
       throw new Error('symbol is null');
     }
     this._symbol = symbol;
-  }
-
-  public name(): string {
-    return this._name;
   }
 
   public symbol(): string {

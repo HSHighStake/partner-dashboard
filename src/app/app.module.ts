@@ -12,6 +12,8 @@ import { HsSalarySummayComponent } from './hs-salary-summay/hs-salary-summay.com
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HsSalaryFormularComponent } from './hs-salary-formular/hs-salary-formular.component';
 import { HsProfitsCalculatorService } from './hs-profits-calculator.service';
+import { Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -24,10 +26,12 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
   ],
   imports: [
     BrowserModule,
-    FusionChartsModule
+    FusionChartsModule,
+    HttpClientModule
   ],
   providers: [
-    HsProfitsCalculatorService
+    HsProfitsCalculatorService,
+    Http
   ],
   bootstrap: [AppComponent]
 })

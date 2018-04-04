@@ -1,54 +1,70 @@
 import { Currency, ICurrency } from '../currency';
-import { Fact, IFact } from './fact';
-import { FactWithDate } from './fact-with-date';
-import { FactsWithDate, IFactsWithDate } from './facts-with-date';
-import { Facts, IFacts } from './facts';
-import { FusionChartPieChartData, FusionChart, LabelValue } from './fc-piechart';
+import { IFact } from './fact';
+import {
+  FusionChartPieChartData,
+  FusionChart,
+  LabelValue
+} from './fc-piechart';
 import { data as mockData } from '../hs-profits-calculator-mock-default';
+import { IFactWithAmount, FactWithAmount } from './fact-with-amount';
+import { IFactWithCount, FactWithCount } from './fact-with-count';
 
 export interface IHSProfitsCalculatorData {
-  fromDate(): Date;
-  currency(): ICurrency;
-  totalCostsEoy(): IFact;
-  totalCostsEoyByCategory(): IFacts;
-  costsEoyByDate(): IFactsWithDate;
-  totalProfitsEoy(): IFact;
-  totalProfitsEoyByCategory(): IFacts;
+  dayFacts(): IFactWithCount[];
+  lossFacts(): IFactWithAmount[];
+  netProfitFacts(): IFactWithAmount[];
+  revenueFacts(): IFactWithAmount[];
 }
 
 export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
-  _fromDate: Date;
-  _currency: ICurrency;
-  _totalCostsEoy: IFact;
-  _totalCostsEoyByCategory: IFacts;
-  _costsEoyByDate: IFactsWithDate;
-  _totalProfitsEoy: IFact;
-  _totalProfitsEoyByCategory: IFacts;
+  _dayFacts: IFactWithCount[];
+  _lossFacts: IFactWithAmount[];
+  _netProfitFacts: IFactWithAmount[];
+  _revenueFacts: IFactWithAmount[];
 
   static fromFake(): HsProfitsCalculatorData {
-  // @todo #3 Figure out why we have to use "as any" to prevent
-  // errors on tlint and compiling. I guess there is a problem on matching //Array<> or {}[]?
+    // @todo #3 Figure out why we have to use 'as any' to prevent
+    // errors on tlint and compiling. I guess there is a problem on matching //Array<> or {}[]?
 
     return HsProfitsCalculatorData.fromObject(mockData as any);
   }
 
   static fromObject(origin: {
-      fromDate: string,
-      currency: { code: string, symbol: string, name: string }
-      totalCostsEoy: { category: string, amount: number },
-      totalCostsEoyByCategory: [{ category: string, amount: number }],
-      costsEoyByDate: [{ category: string, amount: number, date: Date }],
-      totalProfitsEoy: { category: string, amount: number },
-      totalProfitsEoyByCategory:  [{ category: string, amount: number }]
-    }): HsProfitsCalculatorData {
+    dayFacts: [{ category: string; count: number }];
+    lossFacts: [
+      {
+        category: string;
+        amount: {
+          amount: number;
+          currency: { code: string; symbol: string };
+        };
+      }
+    ];
+    netProfitFacts: [
+      {
+        category: string;
+        amount: {
+          amount: number;
+          currency: { code: string; symbol: string };
+        };
+      }
+    ];
+    revenueFacts: [
+      {
+        category: string;
+        amount: {
+          amount: number;
+          currency: { code: string; symbol: string };
+        };
+      }
+    ];
+    totalProfitsEoyByCategory: [{ category: string; amount: number }];
+  }): HsProfitsCalculatorData {
     return new this(
-      new Date(origin.fromDate),
-      Currency.fromObject(origin.currency),
-      Fact.fromObject(origin.totalCostsEoy),
-      Facts.fromObject(origin.totalCostsEoyByCategory),
-      FactsWithDate.fromObject(origin.costsEoyByDate),
-      Fact.fromObject(origin.totalProfitsEoy),
-      Facts.fromObject(origin.totalProfitsEoyByCategory)
+      origin.dayFacts.map(e => FactWithCount.fromObject(e)),
+      origin.lossFacts.map(e => FactWithAmount.fromObject(e)),
+      origin.netProfitFacts.map(e => FactWithAmount.fromObject(e)),
+      origin.revenueFacts.map(e => FactWithAmount.fromObject(e))
     );
   }
 
@@ -61,75 +77,52 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
         'hulk-light',
         true
       ),
-      this.totalCostsEoyByCategory()
-       .items().map(i => new LabelValue(i.category(), i.amount()))
+      this.revenueFacts().map(
+        i => new LabelValue(i.category(), i.amount().amount())
+      )
     );
   }
 
   constructor(
-    fromDate: Date,
-    currency: ICurrency,
-    totalCostsEoy: IFact,
-    totalCostsEoyByCategory: IFacts,
-    costsEoyByDate: IFactsWithDate,
-    totalProfitsEoy: IFact,
-    totalProfitsEoyByCategory: IFacts
+    dayFacts: IFactWithCount[],
+    lossFacts: IFactWithAmount[],
+    netProfitFacts: IFactWithAmount[],
+    revenueFacts: IFactWithAmount[]
   ) {
-    if (fromDate == null) {
-      throw new Error('fromDate is null');
+    if (dayFacts == null) {
+      throw new Error('dayFacts is null');
     }
-    this._fromDate = fromDate;
+    this._dayFacts = dayFacts;
 
-    if (currency == null) {
-      throw new Error('currency is null');
+    if (lossFacts == null) {
+      throw new Error('lossFacts is null');
     }
-    this._currency = currency;
+    this._lossFacts = lossFacts;
 
-    if (totalCostsEoy == null) {
-      throw new Error('totalCostsEoy is null');
+    if (netProfitFacts == null) {
+      throw new Error('netProfitFacts is null');
     }
-    this._totalCostsEoy = totalCostsEoy;
+    this._netProfitFacts = netProfitFacts;
 
-    if (totalCostsEoyByCategory == null) {
-      throw new Error('totalCostsEoyByCategory is null');
+    if (revenueFacts == null) {
+      throw new Error('revenueFacts is null');
     }
-    this._totalCostsEoyByCategory = totalCostsEoyByCategory;
-
-    if (costsEoyByDate == null) {
-      throw new Error('costsEoyByDate is null');
-    }
-    this._costsEoyByDate = costsEoyByDate;
-
-    if (totalProfitsEoy == null) {
-      throw new Error('totalProfitsEoy is null');
-    }
-    this._totalProfitsEoy = totalProfitsEoy;
-
-    if (totalProfitsEoyByCategory == null) {
-      throw new Error('totalProfixEoyByCategory is null');
-    }
-    this._totalProfitsEoyByCategory = totalProfitsEoyByCategory;
+    this._revenueFacts = revenueFacts;
   }
 
-  fromDate(): Date {
-    return this._fromDate;
+  dayFacts(): IFactWithCount[] {
+    return this._dayFacts;
   }
-  currency(): ICurrency {
-    return this._currency;
+
+  lossFacts(): IFactWithAmount[] {
+    return this._lossFacts;
   }
-  totalCostsEoy(): IFact {
-    return this._totalCostsEoy;
+
+  netProfitFacts(): IFactWithAmount[] {
+    return this._netProfitFacts;
   }
-  totalCostsEoyByCategory(): IFacts {
-    return this._totalCostsEoyByCategory;
-  }
-  costsEoyByDate(): IFactsWithDate {
-    return this._costsEoyByDate;
-  }
-  totalProfitsEoy(): IFact {
-    return this._totalProfitsEoy;
-  }
-  totalProfitsEoyByCategory(): IFacts {
-    return this._totalProfitsEoyByCategory;
+
+  revenueFacts(): IFactWithAmount[] {
+    return this._netProfitFacts;
   }
 }
