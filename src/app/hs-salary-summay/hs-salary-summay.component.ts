@@ -6,6 +6,9 @@ import { CurrencyPipe } from '@angular/common';
   templateUrl: './hs-salary-summay.component.html',
   styleUrls: ['./hs-salary-summay.component.css']
 })
+/*
+ * @todo #3:39m Add this values from service as well
+ */
 export class HsSalarySummayComponent implements OnInit {
   summary = {
     'grossSalary': 32000 + 50000,
