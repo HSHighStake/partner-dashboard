@@ -1,5 +1,6 @@
 FROM node:9-alpine as node
 WORKDIR /app
+ENV NODE_HOME .
 COPY package.json /app/
 RUN npm install
 COPY ./ /app/
