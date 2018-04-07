@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Skill } from '../../models/skill';
+import { SkillWithLevel } from '../../models/skill-with-level';
+import { SkillWithRequirement } from '../../models/skill-with-requirement';
+import { MainSkills } from '../../models/main-skills';
+import { ISkills } from '../../models/skills';
 
 @Component({
   selector: 'app-hs-salary-formular',
@@ -7,35 +12,12 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./hs-salary-formular.component.css']
 })
 export class HsSalaryFormularComponent {
-  technologies;
-  types;
+  skilltree: ISkills;
 
   // @todo #3 This should developed as a small service.
   // @todo #3 Whats the problem!
   constructor() {
-    this.types = [
-      {
-        label: 'Frontend',
-        id: 'frontend'
-      },
-      {
-        label: 'Backend',
-        id: 'backend'
-      },
-      {
-        label: 'Fullstack',
-        id: 'fullstack'
-      }
-    ];
-    this.technologies = [
-      {
-        label: 'C#',
-        id: 'c_sharp'
-      },
-      {
-        label: 'Java',
-        id: 'java'
-      }
-    ];
+
+    this.skilltree = MainSkills.fromDefault();
   }
 }
