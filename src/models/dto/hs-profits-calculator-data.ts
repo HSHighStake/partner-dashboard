@@ -66,6 +66,7 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
       origin.netProfitFacts.map(e => FactWithAmount.fromObject(e)),
       origin.revenueFacts.map(e => FactWithAmount.fromObject(e))
     );
+
   }
 
   public toFusionChartPieChartData(): FusionChartPieChartData {
@@ -77,9 +78,12 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
         'hulk-light',
         true
       ),
-      this.revenueFacts().map(
-        i => new LabelValue(i.category(), i.amount().amount())
-      )
+		this.lossFacts()
+			.map(i => new LabelValue(i.category(), i.amount().amount()))
+		.concat(
+			this.netProfitFacts()
+			.map(i => new LabelValue(i.category(), i.amount().amount()))
+		)
     );
   }
 

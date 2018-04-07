@@ -4,6 +4,7 @@
   // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
 		"type": "chrome",
 		"request": "attach",
@@ -15,7 +16,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Chrome gegen localhost starten",
-      "url": "http://localhost:4200",
+      "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}"
     }
   ]
