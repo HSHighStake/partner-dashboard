@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Skill } from '../../models/skill';
+import { SkillWithLevel } from '../../models/skill-with-level';
+import { SkillWithRequirement } from '../../models/skill-with-requirement';
+import { MainSkills } from '../../models/main-skills';
+import { ISkills } from '../../models/skills';
 
 @Component({
   selector: 'app-hs-salary-formular',
@@ -7,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./hs-salary-formular.component.css']
 })
 export class HsSalaryFormularComponent {
+
   technologies;
   types;
   levels;
@@ -18,6 +24,7 @@ export class HsSalaryFormularComponent {
   setHolidays(event: any) {
     this.holidays = event.target.value;
   }
+
 
   // @todo #3 This should developed as a small service.
   // @todo #3 Whats the problem!
