@@ -13,4 +13,51 @@
       <input type="radio" name="technology" value="backend" id="technology_{{technology.id}}">
     </div>
   </div>
+
+  <div id="level">
+    <h2>Level of skills</h2>
+    <div *ngFor="let level of levels">
+      <input type="radio" name="level" value="{{level.id}}" id="level_{{level.id}}">
+      <label for="level_{{level.id}}">{{level.label}}</label>
+    </div>
+  </div>
+
+  <div id="working_type">
+    <h2>Working type</h2>
+    <div *ngFor="let type of working_time_types">
+      <input type="radio" name="working_type" value="{{type.id}}" id="working_type_{{type.id}}">
+      <label for="working_type_{{type.id}}">{{type.label}}</label>
+    </div>
+  </div>
+
+  <div id="payout">
+    <h2>Payout</h2>
+    <div *ngFor="let payout of payouts">
+      <input type="radio" name="payout" value="{{payout.id}}" id="payout_{{payout.id}}">
+      <label for="payout_{{payout.id}}">{{payout.label}}</label>
+    </div>
+  </div>
+
+  <div id="reserves">
+    <h2>Reserves</h2>
+    <div *ngFor="let reserve of reserves">
+      <input type="checkbox" name="reserves" value="{{reserve.id}}" id="reserves_{{reserve.id}}">
+      <label for="reserves_{{reserve.id}}">{{reserve.label}}</label>
+    </div>
+  </div>
+
+  <div id="holidays">
+    <h2>Holidays</h2>
+    <input
+      id="holidays_range"
+      type="range"
+      name="holidays"
+      min="24"
+      max="30"
+      step="1"
+      value="{{holidays}}"
+      (change)="setHolidays($event)"
+    >
+    <label for="holidays_range">{{holidays}} days</label>
+  </div>
 </form>
