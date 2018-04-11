@@ -1,0 +1,157 @@
+/***********************************************************************************
+ *	+ [Master Stylesheet]
+
+ *	+ Project: Milness - Showcase Mobile App HTML Template
+ *	+ Autor: Brainiak
+ *	+ Version: 1.0
+ *	+ Last change: 08.10.2016
+ ***********************************************************************************/
+
+/***********************************************************************************
+ *	+ [Table of contents]
+ *	+ 
+ *	+ 1. Body
+ *	+ 	2. Header / header
+ *	+ 		2.1. Navigation / .top-menu
+ *	+ 		2.2. Mobile navigation / .mobile-menu
+ *	+ 	3. Slider / .slider
+ *	+ 		3.1. Slide / .slide
+ *	+ 		3.2. Control slider / .control-slider
+ *	+ 			3.2.1. Pagination slider / .dots-control
+ *	+ 			3.2.2. Prev/Next buttons / .prev-next
+ *	+ 	4. Under slider / .socialite
+ *	+ 	5. Features / .features
+ *	+ 	6. Video block pop-up / .video-popup
+ *	+ 	7. Services / .services
+ *	+ 	8. Screenshots / .screenshots
+ *	+ 	9. Price / .price-table
+ *	+ 	10. Testimonials / .testimonials
+ *	+ 	11. Your Benefits / .benefits
+ *	+ 	12. Frequently Asked Questions / .faq
+ *	+ 	13. What Did You Reciev / .what-did
+ *	+ 	14. Describe Your Best Feature / .describe
+ *	+ 	15. Download / .downloads
+ *	+ 		15.1. Prtners item / .parnters-item
+ *	+ 		15.2. Download buttons / .buttons-download
+ *	+ 	16. Contact informations / .contact-info
+ *	+ 	17. Contact form / .form-contact
+ *	+ 	18. Google map / .map
+ *	+ 	19. Fubscribe / .subscribe
+ *	+ 	20. Footer / footer
+ *	+ 		20.1. Social inons / .social-inons
+ *	+ 		20.2. Navigation / .footer-menu
+ *	+ 	21. Icon to top / .top
+ ***********************************************************************************/
+
+/***********************************************************************************
+ *	+ COLOR SCHEME:
+	 *	+ Accent color: #26a1e0
+	 *	+ Light background: #e7edf3
+	 *	+ White background: #fafafa
+	 *	+ White blue background: #e7edf3
+	 *	+ Dark accent: #424e5c
+	 *	+ Heading title dark: #3d3a3a
+	 *	+ Heading title white: #3d3a3a
+ ***********************************************************************************/
+
+@import "bourbon" //Bourbon mixin library for Sass
+@import "vars.sass" //Variables
+@import "reset.scss" //reset styles
+@import "mixins.sass" //Some mixins
+
+body
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.6
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizeLegibility
+
+h1,h2,h3,h4,h5,h6
+	font-weight: 700
+	line-height: 1.3
+
+h1
+	font-size: rem(50px)
+
+h2
+	font-size: rem(24px)
+
+h3
+	font-size: rem(19px)
+
+h4
+	font-size: rem(18px)
+
+h5
+	font-size: rem(17px)
+
+h6
+	font-size: rem(16px)
+
+a
+	outline: none!important
+	color: $accent-color
+	&:focus
+		color: $accent-color
+	&:hover
+		color: shade($accent-color, 10%)
+i
+	line-height: inherit!important
+img
+	height: auto
+strong
+	font-weight: 700
+@import "components.sass" //Compononts for template
+@import "layout.sass" //Sections code
+@import "animation.sass" //Animation
+
+.hidden
+	display: none
+.text-right
+	text-align: right
+.text-left
+	text-align: left
+	h2
+		&:after
+			margin: 19px 0 18px
+.text-center
+	text-align: center
+#top-nav-sticky-wrapper
+	height: 0!important
+.search-form	
+	input
+		background: #fff
+		border: 1px solid rgba(0, 0, 0, 0.1)
+		border-radius: 4px
+		padding: 10px
+		width: 100%
+		font-size: 14px
+		color: #555
+		&:focus
+			box-shadow: none
+			color: #555
+			border-color: #9c9c9c
+input:focus, input:active, textarea:focus, textarea:active
+	box-shadow: none
+	border-color: $white
+	color: $white
+	opacity: 1!important
+input:focus, .form-control:focus
+	outline: none
+	box-shadow: none
+
+@import "media.sass" //Media queries
+
+
+
+
+
+
+
+
+
+
+
+

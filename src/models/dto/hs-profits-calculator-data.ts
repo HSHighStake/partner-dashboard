@@ -69,6 +69,7 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
 
   }
 
+  // @todo Add currency from data object
   public toFusionChartPieChartData(): FusionChartPieChartData {
     return new FusionChartPieChartData(
       new FusionChart(

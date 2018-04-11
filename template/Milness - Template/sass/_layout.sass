@@ -1,0 +1,1411 @@
+@import "bourbon"
+@import "vars.sass"
+
+/*==========   Start Header section  ==========*/
+
+header
+	position: absolute
+	margin: 0 auto
+	top: 0
+	right: 0
+	left: 0
+	background-color: rgba(10,9,10,0.20)
+	z-index: 40
+	transition: all ease .6s
+	.logo
+		text-decoration: none
+		font-family: 'Pacifico', cursive
+		display: inline-block
+		padding: 20px 0px 20px 0px
+		font-size: rem(29px)
+		color: #f6f5f5
+		position: relative
+		transition: all ease .6s
+	.top-menu
+		float: right
+		position: relative
+
+/*==========   Start Slider section  ==========*/
+
+.slider
+	padding: 0
+	position: relative
+	height: 100%
+	margin: 0
+	.canvas-slide
+		.container-slide
+			position: relative
+			z-index: 3
+	.container-slide
+		padding-top: 215px
+		padding-bottom: 180px
+	.iphone
+		position: relative
+	.opacity-none
+		opacity: 0
+	.buttons-download
+		margin-top: 65px
+	.hero-background-slider, .fixed-image
+		.slide
+			background-color: rgba(66, 78, 92, 0)
+		&:before
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;
+			background: url('../img/dots.png');
+			z-index: 0;
+	.bg-image
+		&:before
+			content: ""
+			width: 100%
+			height: 100%
+			display: block
+			background-color: #000
+			opacity: 0.67
+			position: absolute
+			top: 0
+	.slick-dotted.slick-slider
+		margin-bottom: 0
+	.content-mill
+		padding-top: 64px
+	.control-slider
+		position: absolute
+		bottom: 0
+		right: 0
+		display: block
+		.prev-next
+			float: right
+			display: block
+			.prev, .next
+				width: 60px
+				height: 60px
+				background-color: $accent-color
+				color: $white
+				opacity: 0.20
+				text-align: center
+				cursor: pointer
+				font-size: rem(50px)
+				float: left
+				transition: all 0.25s ease
+				line-height: 60px
+				vertical-align: middle
+				&:hover
+					background-color: $accent-color
+					opacity: 1
+				i
+					line-height: inherit
+					
+				&.prev
+					margin-right: 1px
+		.dots-control
+			float: left
+			margin-right: 50px
+			padding-top: 19.5px
+	.hero-bg
+		animation: hero-bg 90s linear infinite;
+	.slide
+		background-color: #424e5c
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: 50% 0
+		outline: none
+		.right
+			text-align: right
+		.left
+			.iphone
+				img
+					float: right
+			.buttons-download
+				text-align: left
+		.center
+			text-align: center
+			.buttons-download
+				text-align: center
+	.icon-play
+		margin-top: 50px
+.full-slider
+	background-size: cover
+	.vertical-align
+		min-height: inherit!important
+		height: 100vh!important
+		display: table
+		.content-mill
+			padding-top: 0
+			padding-bottom: 0
+		.container-slide
+			padding-top: 0
+			padding-bottom: 0
+			display: table-cell
+			vertical-align: middle
+			bottom: -35px
+
+.content-slide
+	.description
+		p
+			font-size: rem(16px)
+			color: $white
+			letter-spacing: 0.3px
+
+/*==========   Start Socialite section  ==========*/
+
+.socialite
+	padding-top: 22px
+	padding-bottom: 22px
+	position: relative
+	background-color: $white
+	box-shadow: #a2a2a2 1px 0 10px
+	.item
+		padding-top: 3px
+		height: 30px
+		text-align: center
+		&:nth-child(2)
+			border-right: 1px solid #d7d1d8
+		&:nth-child(5)
+			border-left: 1px solid #d7d1d8
+		img
+			width: 110px
+	.container-socialite
+		position: absolute
+		margin: 0 auto
+		right: 0
+		left: 0
+		.icon-down
+			width: 60px
+			height: 60px
+			background-color: $white
+			border-radius: 50%
+			margin: 0 auto
+			position: relative
+			top: -50px
+			a
+				width: 45px
+				height: 45px
+				display: block
+				color: $accent-color
+				border: dotted 2px $accent-color
+				font-size: 35px
+				border-radius: 50%
+				margin: 0 auto
+				position: relative
+				top: 7.5px
+				text-align: center
+				line-height: 45px
+
+/*==========   Start Our Features section  ==========*/
+
+.features
+	background-color: $white-background
+	.icon-container
+		border-radius: 50%
+		border: 3px solid rgba($dark-accent, 0.47)
+		height: 195px
+		width: 195px
+		text-align: center
+		margin: 0 auto
+		margin-bottom: 43px
+		transition: all .26s ease
+		&:after
+			content: ""
+			display: block
+			width: 70px
+			height: 1px
+			border-top: 2px dashed #ccc
+			position: absolute
+			right: -37px
+			top: 28%
+		&:hover
+			border-color: $accent-color
+			.icon-circle
+				&:after
+					animation: sonarEffect 1.3s ease-out 90ms
+			.icon
+				border-color: lighten($accent-color, 30%)
+				background-color: $accent-color
+		.icon
+			width: 130px
+			height: 130px
+			background-color: $dark-accent
+			display: inline-block
+			@include vertical-align()
+			border: rgba($white-background, 1) 20px solid
+			border-radius: 50%
+			transition: all ease 0.75s
+			i
+				@include vertical-align()
+				font-size: rem(40px)
+				color: $white
+	.item-icon
+		&:last-child
+			.icon-container
+				&:after
+					display: none
+		p
+			color: #8c8c8c
+			font-weight: 300
+			margin-top: 14px
+			font-size: rem(15px)
+	h3, p
+		text-align: center
+	h3
+		font-size: rem(19px)
+		font-weight: 500
+		color: #555
+
+/*==========   Start Video PopUp section  ==========*/
+.video-popup
+	padding-top: 90px
+	padding-bottom: 83px
+	background-size: cover
+	background-image: $background-for-video-section
+	background-repeat: no-repeat
+	text-align: center
+	.heading-title-big
+		font-size: rem(40px)
+		font-weight: 300
+		line-height: rem(61px)
+		margin-top: 30px
+	.icon-play
+		margin: 0 auto
+
+/*==========   Start Our Services section  ==========*/
+
+.services
+	background: $background-for-ourservices-section
+	.container
+		&:last-child
+			.section-class-item
+				padding-bottom: 50px
+	.section-class-image
+		img
+			position: absolute
+			margin: auto
+			left: 0
+			right: 0
+	.with-bg-section
+		padding-top: 44px
+		padding-bottom: 44px
+		position: relative
+		margin-top: 0
+		&:after
+			content: ""
+			display: none
+			position: absolute
+			height: 151px
+			width: 100%
+			top: 0
+			background-color: $accent-color
+			z-index: -1
+		&:last-child
+			&:after
+				display: none
+		h3
+			color: $white
+			font-size: rem(24px)
+			span
+				font-weight: 300
+		.item-icon
+			padding-right: 0
+			padding-left: 0
+		.icon-wrap
+			background-color: #323b46
+		.section-class-item
+			padding-top: 0
+			padding-bottom: 0!important
+		.text-right,.text-left
+			vertical-align: middle
+.section-class-item
+	padding-bottom: 71px
+	padding-top: 71px
+	.icon-wrap
+		font-size: rem(45px)
+		width: 63px
+		height: 63px
+		border-radius: 15px
+		text-align: center
+		color: $white
+		background-color: $accent-color
+		box-shadow: 0px 0 10px #e9e9e9
+		display: block
+		transition: all ease .5s
+		line-height: 63px
+	&:hover
+		.icon-wrap
+			background-color: $accent-color
+	h3
+		color: #555555
+		font-size: rem(17px)
+		font-weight: 600
+		text-transform: uppercase
+
+	p
+		font-size: rem(15px)
+		color: #8c8c8c
+		margin-top: 5px
+
+.items-right
+	.item-icon
+		padding-left: 20px
+
+.item-text,
+.item-icon
+	display: table-cell
+	vertical-align: top
+	.item-icon
+		padding-right: 20px
+
+.container-background
+	background-color: $dark-accent
+	.icon-wrap
+		box-shadow: none
+	.item-text,
+	.item-icon
+		display: table-cell
+		vertical-align: top
+	.item-text
+		width: 100%
+		vertical-align: middle
+
+/*==========   Start Screenshots App Section  ==========*/
+
+.screenshots
+	background-image: $background-for-screenshots-section
+	background-size: cover
+	background-repeat: no-repeat
+	*
+		outline: none
+	
+	.heading-title
+		h2, p
+			color: $heading-title-light
+.container-carousel
+		position: relative
+.dots-screenshot
+	margin: auto
+	margin-top: 50px
+	height: 16px
+	text-align: center
+	.dots
+		display: inline-block!important
+.item-screenshots
+	border: 4px solid rgba(#232121, 0.65)
+	border-radius: 4px
+	position: relative
+	&:hover
+		.preview-container
+			opacity: 1
+			.button-preview
+				right: 0
+	img
+		width: 100%
+		vertical-align: middle
+		display: block
+	.preview-container
+		opacity: 0
+		transition: all ease 0.50s
+		background-color: rgba(#203039, 0.6)
+		width: 100%
+		height: 100%
+		position: absolute
+		.button-preview
+			@include vertical-align()
+			cursor: pointer
+			border: 6px solid rgba($accent-color, 0.65)
+			transition: all ease 0.50s
+			position: absolute
+			left: 0
+			right: 50%
+			margin: 0 auto
+			width: 78px
+			height: 78px
+			border-radius: 50%
+			line-height: 66px
+		.preview
+			border-radius: 50%
+			color: $white
+			background-color: $accent-color
+			height: 100%
+			font-size: 27px
+			display: block
+			text-align: center
+
+/*==========   Start Price Table Section  ==========*/
+
+.price-table
+	background-color: $white-blue-background
+	.item-price
+		background-color: $white
+		box-shadow: 4px 0 19px rgba($dark-accent, 0.35)
+		transition: all ease-in-out .4s
+		&:hover
+			transform: translateY(-2%)
+		.head
+			.name-wrap
+				color: $white
+				background-color: $dark-accent
+				position: relative
+				text-align: center
+				padding-top: 15px
+				h2
+					font-size: 17px
+					font-weight: 400
+					padding-bottom: 3px
+					letter-spacing: .3px
+				&:after
+					content: ""
+					display: block
+					width: 100%
+					height: 30px
+					position: absolute
+					background-image: url('../img/s1_triangle1.svg')
+					background-size: contain
+					background-repeat: no-repeat
+			.price-wrap
+				color: $accent-color
+				text-align: center
+				padding-top: 30px
+				p
+					font-weight: 300
+					font-size: rem(55px)
+					span
+						&:first-child
+							font-weight: 600
+							font-size: rem(24px)
+							vertical-align: top
+							margin-right: 4px
+							line-height: rem(69px)
+						&:last-child
+							margin-left: 5px
+							font-size: rem(18px)
+							font-weight: 400
+		.body
+			ul
+				li
+					text-align: center
+					color: #5c5757
+					font-size: rem(14px)
+					font-weight: 400
+					padding-top: 11px
+					padding-bottom: 11px
+					&:nth-child(2n+1)
+						background-color: #f1f1f1
+					&:last-child
+						padding-top: 19px
+						padding-bottom: 19px
+
+	.most
+		background-color: $dark-accent
+		position: relative
+		.head
+			.name-wrap
+				h2
+					font-size: 17px
+					font-weight: 400
+				&:after
+					// display: none
+			.price-wrap
+				padding-top: 15px
+				padding-bottom: 15px
+				p
+					span
+						&:last-child
+							color: $white-blue-background
+					
+		.body
+			ul
+				li
+					color: #fafafa
+					&:nth-child(2n+1)
+						background-color: #37414d
+					&:last-child
+		&:before
+			content: 'Most popular plan'
+			display: block
+			background: $accent-color
+			position: absolute
+			width: 100%
+			left: 0
+			top: -31px
+			text-align: center
+			color: $white
+			text-transform: uppercase
+			letter-spacing: 2px
+			font-size: rem(11px)
+			padding: 8px 5px
+
+/*==========   Start Testimonials Section  ==========*/
+
+.testimonials
+	background-image: url("../img/bg2.jpg")
+	*
+		outline: none
+	.item-testimonials
+		padding: 30px
+		text-align: center
+		background-color: #37414d
+		border-radius: 3px
+		transition: all ease-in-out .6s
+		&:hover
+			transform: translateY(-2%)
+			img
+				border-color: $accent-color
+		img
+			border-radius: 50%
+			width: 118px
+			margin: 0 auto
+			display: inline-block
+			border: 4px solid #37414d
+			transition: all ease .6s
+		p
+			padding-top: 30px
+			color: $white
+			font-weight: 300
+			font-size: rem(15px)
+			letter-spacing: .2px
+			padding-bottom: 22px
+		span
+			display: block
+			color: $accent-color
+			font-size: rem(16px)
+			&:last-child
+				color: #8190a3
+
+/*==========   Start Your Benefits Section ==========*/
+
+.benefits
+	background-color: $white-blue-background
+	padding-bottom: 0px
+	.icon-circle-border
+		padding: 0
+		&:first-child
+			padding-top: 50px
+			padding-bottom: 70px
+	.iphone-nalf
+		text-align: right
+		img
+			vertical-align: bottom
+	.button-section
+		margin-top: 60px
+
+/*==========   Start Frequently Asked Questions Section ==========*/
+
+.faq
+	background-image: url("../img/bg2.jpg")
+	.text-background
+		margin-bottom: 25px
+
+/*==========   Start What Did You Recieve Section ==========*/
+
+.what-did
+	background-image: url("../img/pattern.png")
+	background-color: #f2f2f2
+	padding-bottom: 0
+	.heading-title
+		margin-bottom: 45px
+	.buttons-download
+		text-align: left
+		padding-top: 22px
+	.section-icon-text
+		margin-bottom: 25px
+		&:last-child
+			margin-bottom: 45px
+	.section-class-item
+		padding-top: 0
+		padding-bottom: 0
+	.button-section
+		margin-top: 30px
+
+/*==========   End Describe Section ==========*/
+
+.describe
+	padding-bottom: 0
+	.heading-title
+		margin-bottom: 45px
+	.iphones-section
+		text-align: left
+		vertical-align: bottom
+		.small
+			right: 0
+			left: auto
+
+/*==========   Start Download Section ==========*/
+
+.downloads
+	background-image: url("../img/bg3.jpg")
+	background-position-y: 35%
+	padding-top: 0
+	.heading-title
+		margin-top: 79px
+	.partners-suction
+		padding-top: 45px
+		padding-bottom: 40px
+		background-color: rgba( #414c5a, 0.7)
+		z-index: 5
+		position: relative
+		*
+			outline: none
+		.prev-next-block
+			opacity: 0
+		&:hover
+			.prev-next-block
+				opacity: 1
+		.parnters-item
+			img
+				margin: 0 auto
+
+/*==========   End Contact Info Section ==========*/
+
+.contact-info
+	background-color: $white-blue-background
+	.icon-circle-border
+		padding: 0
+		&:first-child
+			padding: 0
+		.item-text
+			margin-top: 20px
+			h3
+				text-transform: none
+
+	.item-text,
+	.item-icon
+		display: block
+		vertical-align: inherit
+	.item-icon
+		.icon-wrap
+			margin: 0 auto
+			width: 65px
+			height: 65px
+			line-height: 57px
+			font-size: 25px
+
+/*==========   Start Contact Form Section ==========*/
+
+.form-contact
+	background-image: $background-for-contact-form-section
+
+/*==========   Start Footer Section ==========*/
+
+footer
+	padding-top: 90px
+	background-color: #29282b
+	.heading-title
+		margin-bottom: 30px
+		h2
+			span
+				color: $white
+			&:after
+				background-color: $white
+	.social-inons
+		text-align: center
+	.bottom-footer
+		border-top: 1px solid #555
+		padding-top: 30px
+		padding-bottom: 50px
+		margin-top: 60px
+		.footer-menu
+			ul
+				text-align: right
+				li
+					display: inline-block
+					margin-right: 25px
+					&:last-child
+						margin-right: 0
+					a
+						color: $white
+
+/*==========   Start Footer Section ==========*/
+
+.subscribe
+	background-image: url("../img/bg2.jpg")
+	background-size: cover
+	background-repeat: no-repeat
+	.section-class-item
+		padding-bottom: 0
+		padding-top: 0
+		.item-text
+			h3
+				color: $white
+		.item-icon
+			.icon-wrap
+				height: 50px
+				width: 50px
+				color: $white
+				line-height: 50px
+				font-size: 50px
+		.item-text
+			text-transform: uppercase
+			font-weight: 500
+			letter-spacing: rem(0.5px)
+			h3
+				font-size: rem(17px)
+	.form-inline
+		.form-control
+			display: inline-block
+			input[type=email]
+				width: 400px
+				height: 49px
+				border-bottom: none
+				opacity: 0.6
+				color: $white
+		.contact-form-submit
+			float: right
+	.notify
+		margin-top: 20px	
+
+/*==========   Start pages ==========*/
+
+.page
+	.content-section
+		padding-top: 180px
+		background-image: url("../img/hero-bg.png")
+	.content
+		h1
+			font-weight: 400
+		p
+			letter-spacing: rem(0.3px)
+			line-height: rem(25px)
+	.horizontal-line
+		span
+			width: 75px
+	.content-page
+		padding-top: 60px
+		.text-background
+			h3
+				font-size: rem(17px)
+				font-weight: 500
+				color: #5c5c5c
+				text-transform: uppercase
+				margin-bottom: 7px
+
+/*==========   Start FAQ Page ==========*/
+
+.faq-page
+	.accordion-section
+		h2
+			font-family: $roboto-slab
+			font-weight: 400
+			font-size: rem(25px)
+			color: $accent-color
+			margin-top: 50px
+			margin-bottom: 50px
+		.accordion
+			.ui-accordion-header
+				background-color: $dark-accent
+				color: #fafafa
+				border: 1px solid #eee
+			.ui-state-active
+				background-color: $accent-color
+				color: $white
+	
+/*==========   Start TERMS Page ==========*/	
+
+.terms-page
+	.text-background
+		margin-bottom: 55px
+
+/*==========   Start Contact Page ==========*/
+
+.contact-page
+	.map
+		margin-bottom: 50px
+	.content-page
+		.heading-title
+			margin-bottom: 55px
+/*=============== Start blog pages =================*/
+
+.pagination-btns
+	background: $dark-accent
+	text-align: center
+	h2
+		display: none
+	.pagination
+		margin: 0 auto
+		.current
+			background: rgba(0, 0, 0, 0.2)
+		a
+			text-decoration: none
+			transition: all ease 0.76s
+			&:hover
+				background: rgba(0, 0, 0, 0.2)
+			padding: 20px
+			display: inline-block
+			font-size: rem(28px)
+			font-weight: 400
+		span
+			padding: 20px
+			display: inline-block
+			font-size: rem(28px)
+			font-weight: 400
+			color: #fff
+
+#sidebar
+	position: relative
+	padding-top: 90px
+	&:before
+		content: ''
+		position: absolute
+		height: 100%
+		width: 200%
+		top: 0
+		bottom: 0
+		right: -15%
+		background: #f8f8f8
+		z-index: -1
+	&.right:before
+		left: -15%
+	h4
+		&:first-child
+			margin-top: 0
+		font-size: 18px
+		margin: 60px 0 20px 0
+	h2, h3, h4, h5, h6
+		text-align: left
+	h2:after, h3:after, h4:after, h5:after, h6:after
+		display: none
+	ul
+		margin: 0
+		padding: 0
+		overflow: hidden
+		li
+			list-style: none
+			margin: 0 0 10px 0
+			a
+				color: #5c5c5c
+				text-decoration: none
+				transition: all ease 0.57s
+				&:hover
+					color: $accent-color
+			.children li a:hover, .sub-menu li a:hover
+				color: $accent-color
+			&.cat-item a:before
+				font-family: FontAwesome
+				content: "\f192"
+				font-size: 11px
+				color: $accent-color
+				transform: translateY(-4px)
+				margin-right: 10px
+		&.menu li a:before
+			font-family: FontAwesome
+			content: "\f192"
+			font-size: 11px
+			color: $accent-color
+			transform: translateY(-4px)
+			margin-right: 10px
+		li
+			.children, .sub-menu
+				margin: 10px 0 0 25px
+			.children li a, .sub-menu li a
+				color: #7e7e7e
+				font-size: 14px
+	label
+		font-size: 14px
+	select
+		background: #fff url("images/arrow-down.png") 95% 50% no-repeat
+		border: 1px solid rgba(0, 0, 0, 0.1)
+		border-radius: 4px
+		text-overflow: ''
+		text-indent: 0.01px
+		padding: 10px
+		width: 100%
+		font-size: 14px
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+	.tagcloud
+		overflow: hidden
+		a
+			display: block
+			float: left
+			background: rgba(0, 0, 0, 0.1)
+			border-radius: 2px
+			color: #5c5c5c
+			font-size: 14px !important
+			padding: 6px 12px
+			margin: 0 6px 6px 0
+			transition: all ease 0.55s
+			text-decoration: none
+			&:hover
+				background: $accent-color
+				color: #fff
+	.search-form
+		label
+			width: 96%
+			margin: 0
+			input
+				background: #fff url("../img/search.png") 95% 50% no-repeat
+				width: 95%
+			span
+				display: none
+		.search-submit
+			display: none
+
+// Blog posts 
+
+.blog-page
+	.single-post
+		p
+			margin: 0 0 20px 0
+			color: #5c5c5c
+	.single-post
+		padding-top: 100px
+		.heading-title
+			margin-top: 30px
+			margin-bottom: 50px
+			h2
+				font-family: $roboto
+				font-weight: 500
+.blog-single-post
+	header
+		position: relative
+		background-color: $dark-accent
+	.sf-menu
+		a
+			color: $dark-accent
+		>li
+			&.sfHover
+				background: none
+				> a
+					color: $accent-color
+			> a
+				border-bottom: 5px solid transparent
+				transition: all .5s ease
+				color: $white
+				&:hover
+					color: $accent-color
+		ul
+			border-top: 2px solid $accent-color
+			background-color: $white
+			li
+				border-bottom: 1px dashed rgba(0, 0, 0, 0.1)
+				&:last-child
+					border-bottom: none
+				&:hover
+					background-color: $white-blue-background
+					a
+						color: $dark-accent
+	.sf-arrows		
+		li
+			> .sf-with-ul:after
+				border-top-color: $white
+			.sf-with-ul:focus:after,&:hover > .sf-with-ul:after
+				border-top-color: $accent-color
+		.sfHover
+			.sf-with-ul:after
+				border-top-color: $accent-color
+
+.post
+	margin-bottom: 60px
+	padding-bottom: 60px
+	border-bottom: 1px solid #e7e7e7
+	&:last-child
+		margin-bottom: 0
+		padding-bottom: 0
+		border: none
+	&.sticky
+		padding-bottom: 0
+		border-bottom: none
+	.post-info
+		&:hover
+			.post .post-info .img-wrap img
+				opacity: 0.3
+				margin-left: 0
+		.category
+			a
+				text-decoration: none
+				&:hover
+					color: #eee	
+		.tags
+			color: #fff
+			margin-bottom: 0
+			opacity: 0
+			transform: translateY(10px)
+			a
+				color: #fff
+				text-decoration: none
+				&:hover
+					color: #eee
+	.post-thumb
+		margin-bottom: 20px
+		width: 100% !important
+		background: #337ab7
+		overflow: hidden
+		position: relative
+		&:hover
+			.category, .tags
+				opacity: 1
+				transform: translateY(0)
+	&.sticky .post-thumb
+		margin-bottom: 0
+		
+	img
+		max-width: 100%
+		vertical-align: bottom
+		transition: ease-in-out 0.50s
+	.img-wrap
+		overflow: hidden
+		display: block
+		background: $accent-color
+		&:hover img
+			opacity: 0.3
+			margin-left: 0
+			transition: all ease 0.50s
+
+	.content 
+		h3
+			font-size: 22px
+			margin: 0 0 10px 0
+			font-weight: 900
+			+ p a
+				color: #979797
+		&:after
+			display: none
+		a
+			color: #383838
+			text-decoration: none
+			transition: ease-in-out 0.60s
+			&:hover
+				color: $accent-color
+		+ p
+			font-size: 14px
+			font-weight: 700
+			color: #979797
+
+		.btn-default
+			color: $white
+			background-color: $accent-color
+			&:hover
+				color: #fff
+				background: shade($accent-color, 10%)
+	.post-info
+		position: absolute
+		width: 80%
+		z-index: 1
+		left: 30px
+		bottom: 30px
+		*
+			transition: all 300ms ease-in-out
+		.category
+			color: #fff
+			font-size: 24px
+			margin-bottom: 10px
+			opacity: 0
+			transform: translateY(-10px)
+			a
+				color: #fff
+	h2
+		font-size: 22px
+		margin: 0 0 10px 0
+		font-weight: 900
+
+.post.sticky
+	position: relative
+	background: #f8f8f8
+	.content
+		padding: 30px
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 10px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 50px 50px 0
+		border-color: transparent $accent-color transparent transparent
+	&:before
+		content: "\f135"
+		position: absolute
+		color: #fff
+		z-index: 1
+		top: 7px
+		right: 17px
+		font-size: 14px
+		display: inline-block
+		font-family: 'FontAwesome'
+		font-style: normal
+		font-weight: 400
+		line-height: 1
+		-webkit-font-smoothing: antialiased
+		-moz-osx-font-smoothing: grayscale
+	&:after
+		right: 0
+	&:before
+		right: 10px
+
+
+
+//Blog posts
+
+.post-thumbnail
+	margin-bottom: 20px
+.single-post
+	padding-bottom: 50px
+.info span
+	margin: 0 5px
+	&:first-child
+		margin-left: 0
+
+.author-bio
+	overflow: hidden
+	background: $dark-accent
+	padding: 30px 0
+	h3
+		color: #fff
+		font-size: 20px
+		font-weight: 900
+		margin-bottom: 15px
+	p
+		color: #fff
+	.profile-img
+		text-align: center
+		img
+			border-radius: 50%
+	.author-info
+		.author-description
+			color: #eee
+			margin: 0
+
+.entry-content blockquote
+	margin: 30px 0
+
+.format
+	display: inline-block
+	vertical-align: bottom
+	background: #f8f8f8
+	font-size: 0
+	letter-spacing: 0
+	padding: 14px
+	margin: 10px 0 0 10px
+	border-radius: 50%
+	width: 45px
+	height: 45px
+	font-weight: normal
+	&:hover
+		background: #f8f8f8
+		font-size: 0
+		letter-spacing: 0
+		padding: 14px
+		margin: 10px 0 0 10px
+		border-radius: 50%
+		font-weight: normal
+	&:before
+		font-family: FontAwesome
+		display: block
+		font-size: 15px
+		text-align: center
+		color: #979797
+
+.format-chat .format:before
+	content: "\f086"
+
+.format-quote .format:before
+	content: "\f10d"
+
+.format-link .format:before
+	content: "\f0c1"
+
+.format-status .format:before
+	content: "\f075"
+
+.format-aside .format:before
+	content: "\f10c"
+
+.format-video .format:before
+	content: "\f04b"
+
+.format-audio .format:before
+	content: "\f025"
+
+.format-image .format:before
+	content: "\f03e"
+
+.format-gallery .format:before
+	content: "\f030"
+
+.gallery-item
+	display: inline-block
+	padding: 1.79104477%
+	text-align: center
+	vertical-align: top
+	width: 100%
+	figcaption
+		padding: 15px 5px 0 5px
+
+.gallery-columns-4 .gallery-item
+	max-width: 25%
+
+.gallery-columns-3 .gallery-item
+	max-width: 33.33%
+
+.gallery-item a
+	transition: all 300ms ease-in-out
+	&:hover
+		opacity: 0.6
+
+.excerpt
+	margin-top: 30px
+
+article.post .nav-links a, .comment-navigation div a
+	display: inline-block
+	background: #f8f8f8
+	padding: 10px
+	width: 49%
+	text-align: center
+	margin-top: 30px
+
+article.post .nav-links a:hover
+	background: #26a1e0
+	color: #fff
+
+.comment-navigation
+	div a:hover
+		background: #26a1e0
+		color: #fff
+	h1
+		display: none
+	div a
+		margin-top: 0
+
+#comment-nav-below
+	margin-bottom: 30px
+
+.page-links
+	margin-bottom: 30px
+	a
+		display: inline-block
+		color: #fff
+		padding: 10px 15px
+		background: #26a1e0
+	span
+		margin-right: 5px
+	a span
+		margin: 0
+
+ul.social-sharing
+	border-top: 1px solid #e7e7e7
+	margin: 60px 0 1px 0
+	padding: 60px 0 0 0
+	overflow: hidden
+	list-style: none
+	li
+		float: left
+		width: 16.6666667%
+		text-align: center
+
+		&:first-child
+			font-weight: 600
+			line-height: 2.8em
+			text-align: left
+		a
+			background: #f8f8f8
+			color: #8e9598
+			font-family: FontAwesome
+			text-decoration: none
+			padding: 14px 0
+			transition: all ease 0.30s
+			display: block
+			border-right: 1px solid #fff
+				
+		&:last-child a
+			border-right: 0
+		a:hover
+			background: $accent-color
+			color: #fff
+
+.social_facebook:before
+	content: "\f09a"
+
+.social_twitter:before
+	content: "\f099"
+
+.social_linkedin:before
+	content: "\f0e1"
+
+.social_pinterest:before
+	content: "\f0d2"
+
+.social_googleplus:before
+	content: "\f0d5"
+
+// Comments
+
+.comment-list
+	padding: 0
+	list-style: none
+	> li
+		margin: 15px 0
+		padding: 15px 0 30px 0
+		ul, ol
+			margin-bottom: 30px
+	img
+		border-radius: 50%
+	.user
+		font-size: 18px
+		font-weight: 800
+		margin-bottom: 0!important
+		span
+			background: $accent-color
+			font-size: 9px
+			display: inline-block
+			text-transform: uppercase
+			font-weight: 600
+			padding: 4px 5px
+			border-radius: 3px
+			margin-left: 5px
+			transform: translateY(-2px)
+			transition: all .3s ease-in-out
+			a
+				color: #fff
+				transition: all .3s ease-in-out
+				text-decoration: none
+			&:hover
+				background: #f8f8f8
+				a
+					color: #5c5c5c
+	.info
+		font-size: 14px
+		font-weight: 500
+		color: #979797!important
+		margin-bottom: 10px
+	.children
+		list-style: none
+		padding: 0
+		border-top: 1px solid #e7e7e7
+		li
+			border-bottom: 1px solid #e7e7e7
+			padding-left: 100px
+			padding-top: 40px
+			padding-bottom: 40px
+		.children
+			border: none
+			li
+				padding-left: 200px
+
+h3#reply-title:after
+	content: ''
+	display: block
+	height: 2px
+	width: 70px
+	background: #26a1e0
+	margin: 20px 0 0 0
+	animation: title-border .5s ease-in
+
+.comment-form-author, .comment-form-email
+	float: left
+	width: 33.3%
+	padding-right: 30px
+
+.comment-form-comment:before, .comment-form-url:after
+	content: "."
+	visibility: hidden
+	display: block
+	height: 0
+	clear: both
+
+.comment-notes
+	margin-bottom: 30px

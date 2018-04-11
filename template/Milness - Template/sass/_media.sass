@@ -1,0 +1,665 @@
+@import "bourbon"
+@import "vars.sass"
+
+/* Desktop First Method */
+@media only screen and (max-width : 1350px)
+	.prev-next-block
+		display: none
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/*Start Our Features section*/
+	.features
+		background-color: $white-background
+		.icon-container
+			&:after
+				width: 30px
+				height: 1px
+				border-top: 2px dashed #ccc
+				position: absolute
+				right: -15px
+				top: 28%
+	/*Start Benefits Section*/
+	.benefits
+		.section-class-item
+			&:first-child,&:last-child
+				padding-bottom: 0
+				padding-top: 55px
+			.item-text
+				vertical-align: middle
+		.button-section
+			margin-top: 50px
+	/*Form subscribe*/
+	.subscribe 
+		.form-inline
+			.form-control
+				display: inline-block
+				input[type=email]
+					width: 295px
+	// Other
+	.avatar-80
+		width: 50px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+
+	header
+		.top-menu
+			display: none
+		.logo
+			padding: 10px 0 10px 20px
+		.toggle-mnu
+			top: 23px
+			right: 20px
+	.heading-title-big
+		font-size: rem(45px)
+		line-height: rem(55px)
+	/*Downloads*/
+	.buttons-download
+		.download
+			display: inline-block
+			border-radius: 3px
+			padding: 7px 18px
+			margin-right: 5px
+			text-align: left
+			&:last-child
+				margin-right: 0
+			span
+				font-size: rem(22px)
+				line-height: rem(25px)
+				span
+					font-size: rem(12px)
+			i
+				font-size: rem(38px)
+				display: inline-block
+				position: relative
+				top: -6px
+				margin-right: 13px
+
+	/*Start Slider section*/
+	.slider
+		.container-slide
+			padding-top: 145px
+			padding-bottom: 150px
+		.buttons-download
+			margin-top: 35px				
+		.slide
+			.content-slide
+				.description
+					p
+						font-size: rem(15px)
+						color: #fff
+						letter-spacing: rem(0.3px)
+	.full-slider
+		.vertical-align
+			min-height: inherit!important
+			height: inherit!important
+			display: block
+			.content-mill
+				padding-top: 64px
+			.container-slide
+				padding-top: 145px
+				padding-bottom: 150px
+				display: block
+				vertical-align: inherit
+	.slick-slide 
+		.iphone
+			img
+				width: 100%
+
+	/*Start Socialite section*/
+	.socialite
+		padding-top: 15px
+		padding-bottom: 15px
+		.container-socialite
+			.item
+				img
+					width: 95px
+			.icon-down
+				width: 55px
+				height: 55px
+				top: -41px
+				a
+					width: 40px
+					height: 40px
+					font-size: rem(33px)
+					top: 7.5px
+					line-height: rem(45px)
+
+	/*Start Our Features section*/
+	.features
+		.icon-container
+			&:after
+				display: none
+		.item-icon
+			&:first-child,&:nth-child(2)
+				margin-bottom: 50px
+	/*Start video Poupup*/
+	.video-popup
+		.heading-title-big
+			font-size: rem(35px)
+	/*Start Our Services section*/
+	.services
+		.section-class-image
+			display: none
+	/*Start Benefits Section*/
+	.benefits
+		padding-bottom: rem(90px)
+		.iphone-nalf
+			display: none
+		.section-class-item
+			&:first-child,&:last-child
+				padding-bottom: 50px
+				padding-top: 0
+			.item-text
+				vertical-align: middle
+		.button-section
+			margin-top: 0
+	/*Start Price Table Section*/
+	.price-table
+		.row
+			.col-md-3
+				&:nth-child(-n+2)
+					.item-price
+						margin-bottom: 40px
+			.head
+				.name-wrap
+					&:after
+						height: 38px
+		.most
+			&:before
+				display: none
+	/*FAQ Section*/
+	.faq
+		.accordion
+			margin-top: 50px
+	/*What Did You Recieve Section*/
+	.what-did
+		padding-bottom: 90px
+		.section-icon-text
+			&:last-child
+				margin-bottom: 0
+	/*Iphones*/
+	.iphones
+		height: 450px
+		margin: 0 auto
+		margin-bottom: 50px
+		max-width: 600px
+		width: auto
+		.left-mob-back
+			position: absolute
+			left: 10%
+			bottom: 0
+			z-index: 0
+			top: 50px
+		.left-mob-front
+			position: relative
+			z-index: 9
+			right: 12%
+		.right-mob-back
+			top: 50px
+		.right-mob-front
+			
+	/*Describe*/
+	.describe
+		margin-bottom: 90px
+	/*Blog*/
+	.comment-list
+		.children
+			li
+				padding-left: 50px
+	/*Start footer*/
+	footer
+		.bottom-footer
+			text-align: center
+			.footer-menu
+				margin-top: 20px
+				ul
+					text-align: center
+	/*Form subscribe*/
+	.subscribe
+		.form-inline
+			margin-top: 20px
+			.form-control
+				width: 78%
+				display: inline-block
+				input[type=email]
+					width: 100%
+			.contact-form-submit
+				float: left
+				margin-top: 20px
+	/*Blog*/
+	.comment-list
+		.children
+			.children
+				li
+					padding-left: 50px
+	ul.social-sharing
+		li
+			width: 19.99999%
+			&:first-child
+				display: none
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+
+	/*Fixed header*/
+	.is-sticky
+		header
+			.logo
+				padding: 10px 10px 10px 20px
+	/*Start slider*/ 
+	.slider
+		.container-slide
+			padding-top: 130px
+			padding-bottom: 100px
+		.slide
+			.right,.left
+				text-align: center
+				.buttons-download
+					text-align: center
+	.full-slider
+		.vertical-align
+			.container-slide
+				padding-top: 70px
+				padding-bottom: 70px
+			.content-mill
+				padding-bottom: 70px
+
+	/*Start Socialite*/
+	.socialite
+		padding-top: 10px
+		padding-bottom: 10px
+		.item
+			height: 26px
+			img
+				width: 80px
+		.container-socialite
+			.icon-down
+				width: 45px
+				height: 45px
+				top: -30px
+				a
+					width: 32px
+					height: 32px
+					font-size: rem(30px)
+					top: 7px
+					line-height: rem(34px)
+
+	/*Start Our Features section*/
+	.features
+		.icon-container
+			&:after
+				display: none
+		.item-icon
+			margin-bottom: 50px
+			&:last-child
+				margin-bottom: 0
+	/*Start video Poupup*/
+	.video-popup
+		.heading-title-big
+			font-size: rem(28px)
+	/*Start Our Services section*/
+	.services
+		.with-bg-section
+			padding-top: 30px
+			padding-bottom: 30px
+	.section-class-item
+		text-align: center
+		padding-top: 40px
+		padding-bottom: 40px
+		display: inline-block
+	.item-text,
+	.item-icon
+		display: table-cell
+	.items-right,.items-left
+		text-align: center
+
+	.text-right
+		.icon-wrap
+			margin-right: 20px
+	.container-background
+		background-color: $dark-accent
+		.icon-wrap
+			box-shadow: none
+		.item-text,
+		.item-icon
+			display: inline-block
+			vertical-align: top
+		.section-class-item
+			text-align: center
+		.item-text
+			width: auto
+			vertical-align: middle
+		.text-left
+			.icon-wrap
+				margin-left: 20px
+	/*Start Benefits Section*/
+	.benefits
+		.section-class-item
+			display: block
+			&:first-child,&:last-child
+				padding-bottom: 50px
+				padding-top: 0
+			.item-text
+				vertical-align: middle
+		.button-section
+			text-align: center
+		.item-icon,.item-text
+			display: block
+			text-align: center
+		.item-icon
+			margin-bottom: 15px
+			.icon-wrap
+				margin: auto
+	/*Start Price Table Section*/
+	.price-table
+		.row
+			.col-md-3
+				.item-price
+					margin-bottom: 40px
+				&:last-child
+					.item-price
+						margin-bottom: 0
+			.head
+				.name-wrap
+					&:after
+						height: 30px
+						background-size: 100% 100%
+	/*Iphones*/
+	.iphones
+		height: 400px
+		margin: 0 auto
+		margin-bottom: 50px
+		max-width: 600px
+		width: auto
+		.left-mob-back
+			position: absolute
+			left: 5%
+			bottom: 0
+			z-index: 0
+			top: 20px
+		.left-mob-front
+			position: relative
+			z-index: 9
+			right: 5%
+		.right-mob-back
+			top: 20px
+	/*Contact block*/
+	.contacn-block
+		.section-class-item
+			margin-bottom: 20px
+			display: block
+		&:last-child
+			.section-class-item
+				margin-bottom: 0
+	/*Downloads section*/
+	.downloads	
+		.buttons-download
+			.download
+				display: table
+				margin: 0 auto
+				margin-bottom: 10px
+				&:last-child
+					margin-right: auto
+					margin-bottom: 0
+	/*Start footer*/ 
+	footer
+		.bottom-footer
+			text-align: center
+	/*Form subscribe*/
+	.subscribe 
+		.form-inline
+			.form-control
+				width: 100%
+				display: inline-block
+				input[type=email]
+					width: 100%
+			.contact-form-submit
+				width: 20%
+		// Other
+	.avatar-80
+		width: 80px
+	.single-blog 
+		padding: 0 20px 40px
+	.blog-page
+		.single-blog
+			.heading-title
+				text-align: left!important
+				h2
+					&:after
+						margin: 19px 0 18px!important
+	.author-bio
+		.profile-img
+			padding-bottom: 20px
+	#sidebar
+		background: #f8f8f8
+		&:before
+			position: absolute
+			height: 0
+			width: 0
+			top: 0
+			bottom: 0
+			right: 0
+			background: #f8f8f8
+			z-index: -1
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+
+	/*Prev and next buttons*/
+	.prev-next-block
+		display: block
+		.prev
+			left: 0
+		.next
+			right: 0
+
+	.text-left 
+		h2
+			&:after
+					margin: 19px auto 18px!important
+	.heading-title-big
+		font-size: rem(38px)
+		line-height: rem(47px)
+	.heading-title
+		h2
+			line-height: rem(40px)
+	/*Downloads*/
+	.buttons-download
+		margin-top: 35px
+		.download
+			display: inline-block
+			border-radius: 3px
+			padding: 7px 18px
+			margin-right: 5px
+			text-align: left
+			margin-bottom: 10px
+			&:last-child
+				margin-right: 0
+				margin-bottom: 0
+			span
+				font-size: rem(18px)
+				line-height: rem(20px)
+				span
+					font-size: rem(11px)
+			i
+				font-size: rem(27px)
+				display: inline-block
+				position: relative
+				top: -6px
+				margin-right: 13px
+	/*Start slider*/
+	.slider
+		.control-slider
+			display: none
+		.container-slide
+			padding-bottom: 70px
+		.buttons-download
+			.download
+				margin-bottom: 0!important
+				&:first-child
+					margin-bottom: 10px
+				&:last-child
+					margin-right: 0
+		.slide
+			.content-slide
+				.description
+					p
+						font-size: rem(14px)
+						line-height: rem(25px)
+	/*Start  Socialite*/
+	.socialite
+		display: none
+
+	// Start video Poupup
+
+	.video-popup
+		.heading-title-big
+			font-size: rem(23px)
+			line-height: rem(45px)
+	/*Start Our Services section*/
+	.services
+		.with-bg-section
+			padding-top: 0
+			.item-icon
+				display: none
+		.container
+			&:last-child
+				.section-class-item
+					padding-bottom: 0
+					&:last-child
+						padding-top: 30px
+		.bg-right 
+			.section-class-item
+				padding-top: 0!important
+		.item-icon
+			display: none
+	.text-left, .text-right
+		text-align: center!important
+	.section-class-item
+		padding-top: 0
+	/*Iphones*/
+	.iphones
+		height: 300px
+		margin: 0 auto
+		margin-bottom: 50px
+		max-width: 300px
+		width: auto
+		.left-mob-back
+			// display: none
+		.left-mob-front
+			position: relative
+			z-index: 9
+			right: 0
+		img
+			width: 70%
+	/*What Did You Recieve*/ 
+	.what-did
+		.section-icon-text
+			text-align: center
+		.item-icon,
+		.item-text
+			display: block
+			padding: 0
+		.item-icon
+			margin-bottom: 10px
+			.icon-wrap
+				margin: 0 auto
+	/*Download Section*/
+	.downloads
+		.partners-suction
+			.prev-next-block
+				opacity: 1
+	/*Form subscribe*/
+	.subscribe
+		.section-class-item
+			.item-icon,
+			.item-text
+				display: block
+			.item-icon
+				display: none
+		.text-with-icon
+			.item-text
+				padding-left: 0
+	.full-slider
+		.vertical-align
+			.content-mill
+				padding-top: 15px
+			.container-slide
+				padding-top: 70px
+				padding-bottom: 70px
+	.button-section 
+		.btn
+			margin-top: 10px
+			&:nth-child(2n+1)
+				margin-right: 0
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 398px)
+	/*Slider*/
+	.slider
+		.buttons-download
+			.download
+				&:nth-child(1n+1)
+					margin-bottom: 10px!important
+				&:last-child
+					margin-right: 0
+
+
+@media only screen and (max-width : 320px)
+	/**/
+	.triangle
+		&:before
+			bottom: -1px
+	/*Social icons*/
+	.social-inons
+		ul
+			li
+				font-size: rem(14px)
+				border: 3px solid shade($accent-color, 20%)
+				border-radius: 50%
+				width: 38px
+				height: 38px
+				margin-right: 7px
+				&:last-child
+					margin-right: 0
+				&:hover
+					background-color: $accent-color
+				a
+					color: $white
+					display: block
+					line-height: rem(31px)
+					text-align: center
+					i
+						vertical-align: middle
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	.toggle-mnu
+		display: none
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/*Slider*/
+	.slider
+		.slide
+			min-height: 944px
