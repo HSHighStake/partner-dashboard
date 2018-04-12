@@ -69,6 +69,11 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
 
   }
 
+  // returns new SummaryData object, that was received via API
+  public toSummary() : any {
+    return {}; // SummaryData
+  }
+
   // @todo Add currency from data object
   public toFusionChartPieChartData(): FusionChartPieChartData {
     return new FusionChartPieChartData(

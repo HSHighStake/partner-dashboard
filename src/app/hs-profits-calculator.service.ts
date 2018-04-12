@@ -12,6 +12,14 @@ export class HsProfitsCalculatorService {
 
 	constructor(private httpClient: HttpClient) {}
 
+	public summaryData() { // gets data using api
+		return {
+	    'grossSalary': 32000 + 50000,
+	    'additionalSalaryCosts': (22 + 6 + 25 + 15) * 1000,
+	    'opportunity': (22 + 6) * 1000
+	  };
+	}
+
 	public fusionChartPieChartData() {
 		return this.httpClient
 			.post('/api/profit', {
