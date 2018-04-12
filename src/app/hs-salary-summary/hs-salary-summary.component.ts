@@ -3,9 +3,9 @@ import { HsProfitsCalculatorService } from '../hs-profits-calculator.service';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-hs-salary-summay',
-  templateUrl: './hs-salary-summay.component.html',
-  styleUrls: ['./hs-salary-summay.component.css']
+  selector: 'app-hs-salary-summary',
+  templateUrl: './hs-salary-summary.component.html',
+  styleUrls: ['./hs-salary-summary.component.css']
 })
 /*
  * @todo #3:45 Add this values from service as well

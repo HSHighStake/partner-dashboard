@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HsSalarySummayComponent } from './hs-salary-summay.component';
+import { HsSalarySummayComponent } from './hs-salary-summary.component';
 
 describe('HsSalarySummayComponent', () => {
   let component: HsSalarySummayComponent;

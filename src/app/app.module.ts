@@ -8,7 +8,7 @@ import { FusionChartsModule } from 'angular4-fusioncharts';
 
 import { AppComponent } from './app.component';
 import { HsPiechartComponent } from './hs-piechart/hs-piechart.component';
-import { HsSalarySummayComponent } from './hs-salary-summay/hs-salary-summay.component';
+import { HsSalarySummayComponent } from './hs-salary-summary/hs-salary-summary.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HsSalaryFormularComponent } from './hs-salary-formular/hs-salary-formular.component';
 import { HsProfitsCalculatorService } from './hs-profits-calculator.service';
