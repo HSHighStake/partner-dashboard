@@ -11,11 +11,6 @@ import { CurrencyPipe } from '@angular/common';
  * @todo #3:45 Add this values from service as well
  */
 export class HsSalarySummayComponent implements OnInit {
-  // summary = {
-  //   'grossSalary': 32000 + 50000,
-  //   'additionalSalaryCosts': (22 + 6 + 25 + 15) * 1000,
-  //   'opportunity': (22 + 6) * 1000
-  // };
   summary;
 
   constructor(private dataService: HsProfitsCalculatorService) {

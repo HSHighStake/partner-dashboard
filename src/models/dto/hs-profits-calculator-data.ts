@@ -69,9 +69,17 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
 
   }
 
-  // returns new SummaryData object, that was received via API
   public toSummary() : any {
-    return {}; // SummaryData
+    let data = {};
+    this.netProfitFacts().forEach(e => {
+      data[e.category()] = e.amount().amount();
+    });
+
+    let test = this.dayFacts().filter(e => e.category() === 'Working').map(e => {
+      data['DaysOfWork'] = e.count()
+    });
+
+    return data;
   }
 
   // @todo Add currency from data object
