@@ -66,7 +66,8 @@ export class HsSalaryFormularComponent {
         label: 'Senior',
         id: 'senior'
       }
-    ];
+	];
+	/*
     this.payouts = [
       {
         label: 'Weekly',
@@ -84,7 +85,9 @@ export class HsSalaryFormularComponent {
         label: 'Yearly',
         id: 'yearly'
       }
-    ];
+	];
+	*/
+	/*
     this.working_time_types = [
       {
         label: '4 days x 8 hours',
@@ -113,6 +116,7 @@ export class HsSalaryFormularComponent {
         id: 'christmas_pay'
       },
     ];
-    this.holidays = 24;
+	this.holidays = 24;
+	*/
   }
 }
