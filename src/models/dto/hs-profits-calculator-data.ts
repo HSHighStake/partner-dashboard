@@ -8,6 +8,7 @@ import {
 import { data as mockData } from '../hs-profits-calculator-mock-default';
 import { IFactWithAmount, FactWithAmount } from './fact-with-amount';
 import { IFactWithCount, FactWithCount } from './fact-with-count';
+import { HsSalarySummaryData } from './hs-salary-summary-data';
 
 export interface IHSProfitsCalculatorData {
   dayFacts(): IFactWithCount[];
@@ -67,6 +68,25 @@ export class HsProfitsCalculatorData implements IHSProfitsCalculatorData {
       origin.revenueFacts.map(e => FactWithAmount.fromObject(e))
     );
 
+  }
+
+  public toSummary() : HsSalarySummaryData {
+    let data = {};
+    this.netProfitFacts().forEach(e => {
+      data[e.category()] = e.amount().amount();
+    });
+
+    this.dayFacts().forEach(e => { data[e.category()] = 0 });
+
+    this.dayFacts().forEach(e => {
+      data[e.category()] += e.count()
+    });
+
+    return new HsSalarySummaryData(
+      data['BasicSalary'],
+      data['BonusSalaryPlan'],
+      data['Working']
+    );
   }
 
   // @todo Add currency from data object

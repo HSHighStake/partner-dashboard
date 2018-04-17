@@ -21,6 +21,7 @@ export class FactWithCount implements IFactWithCount {
       throw new Error('category is null');
     }
     this._category = category;
+    this._count = count;
   }
 
   public count(): number {

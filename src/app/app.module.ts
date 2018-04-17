@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HsPiechartComponent } from './hs-piechart/hs-piechart.component';
-import { HsSalarySummayComponent } from './hs-salary-summay/hs-salary-summay.component';
+import { HsSalarySummaryComponent } from './hs-salary-summary/hs-salary-summary.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HsSalaryFormularComponent } from './hs-salary-formular/hs-salary-formular.component';
 import { HsProfitsCalculatorService } from './hs-profits-calculator.service';
@@ -22,7 +22,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
   declarations: [
     AppComponent,
     HsPiechartComponent,
-    HsSalarySummayComponent,
+    HsSalarySummaryComponent,
     HsSalaryFormularComponent
   ],
   imports: [

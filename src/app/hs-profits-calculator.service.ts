@@ -12,6 +12,10 @@ export class HsProfitsCalculatorService {
 
 	constructor(private httpClient: HttpClient) {}
 
+	public summaryData() { // gets data using api
+		return HsProfitsCalculatorData.fromFake().toSummary();
+	}
+
 	public fusionChartPieChartData() {
 		return this.httpClient
 			.post('/api/profit', {
