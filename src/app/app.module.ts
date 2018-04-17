@@ -5,6 +5,7 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HsPiechartComponent } from './hs-piechart/hs-piechart.component';
@@ -27,7 +28,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
   imports: [
     BrowserModule,
     FusionChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     HsProfitsCalculatorService,
