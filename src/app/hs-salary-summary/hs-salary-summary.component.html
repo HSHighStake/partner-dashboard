@@ -4,7 +4,7 @@
       Gross salary
     </label>
     <span>
-      {{summary.BasicSalary | currency:'EUR':'symbol':'4.2-2':'de'}}
+      {{summary.basicSalary | currency:'EUR':'symbol':'4.2-2':'de'}}
     </span>
   </li>
   <li>
@@ -12,23 +12,23 @@
       Additional salary costs
     </label>
     <span>
-      {{summary.BonusSalaryPlan | currency:'EUR':'symbol':'4.2-2':'de'}}
+      {{summary.bonusSalaryPlan | currency:'EUR':'symbol':'4.2-2':'de'}}
     </span>
   </li>
-  <li>
+  <!-- <li>
     <label>
       Opportunity
     </label>
     <span>
       {{summary.opportunity | currency:'EUR':'symbol':'4.2-2':'de'}}
     </span>
-  </li>
+  </li> -->
   <li>
     <label>
       Days of work:
     </label>
     <span>
-      {{summary.DaysOfWork}}
+      {{summary.daysOfWork}}
     </span>
   </li>
 </ul>
