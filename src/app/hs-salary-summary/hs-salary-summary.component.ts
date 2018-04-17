@@ -12,7 +12,7 @@ import { HsSalarySummaryData } from '../../models/dto/hs-salary-summary-data';
 /*
  * @todo #3:45 Add this values from service as well
  */
-export class HsSalarySummayComponent implements OnInit {
+export class HsSalarySummaryComponent implements OnInit {
   summary : HsSalarySummaryData;
 
   constructor(private dataService: HsProfitsCalculatorService) {
