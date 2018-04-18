@@ -15,6 +15,10 @@ import { HsSalaryFormularComponent } from './hs-salary-formular/hs-salary-formul
 import { HsProfitsCalculatorService } from './hs-profits-calculator.service';
 import { Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { HsNavigationComponent } from './hs-navigation/hs-navigation.component';
+import { HsFooterComponent } from './hs-footer/hs-footer.component';
+import { HsScrollToTopComponent } from './hs-scroll-to-top/hs-scroll-to-top.component';
+import { HsPaginationComponent } from './hs-pagination/hs-pagination.component';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -23,7 +27,11 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     AppComponent,
     HsPiechartComponent,
     HsSalarySummaryComponent,
-    HsSalaryFormularComponent
+    HsSalaryFormularComponent,
+    HsNavigationComponent,
+    HsFooterComponent,
+    HsScrollToTopComponent,
+    HsPaginationComponent
   ],
   imports: [
     BrowserModule,

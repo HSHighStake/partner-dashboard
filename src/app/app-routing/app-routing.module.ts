@@ -6,7 +6,7 @@ import { HsSalarySummaryComponent } from '../hs-salary-summary/hs-salary-summary
 import { HsSalaryFormularComponent } from '../hs-salary-formular/hs-salary-formular.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HsSalarySummaryComponent },
+  { path: '', component: HsSalaryFormularComponent },
   { path: 'summary', component: HsSalarySummaryComponent },
   { path: 'formular', component: HsSalaryFormularComponent },
   { path: 'piechart', component: HsPiechartComponent },
