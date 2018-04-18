@@ -1,9 +1,8 @@
 <div>
-  <nav>
-    <a routerLink="/summary">Summary</a>
-    <a routerLink="/formular">Formular</a>
-    <a routerLink="/piechart">PieChart</a>
-  </nav>
-
-  <router-outlet></router-outlet>
+	<app-hs-navigation></app-hs-navigation>
+	<content>
+		<router-outlet></router-outlet>
+	</content>
+	<app-hs-footer></app-hs-footer>
+	<app-hs-scroll-to-top></app-hs-scroll-to-top>
 </div>
