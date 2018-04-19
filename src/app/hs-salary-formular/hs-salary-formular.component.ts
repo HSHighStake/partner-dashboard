@@ -20,9 +20,14 @@ export class HsSalaryFormularComponent {
   working_time_types;
   reserves;
   holidays;
+  isFrontend = true;
 
   setHolidays(event: any) {
     this.holidays = event.target.value;
+  }
+
+  checkTypeOfDevelopment(event : any) {
+    this.isFrontend = event.target.value === 'frontend';
   }
 
 
@@ -51,7 +56,11 @@ export class HsSalaryFormularComponent {
       {
         label: 'Java',
         id: 'java'
-      }
+      },
+      {
+        label: 'JavaScript',
+        id: 'javascript'
+      },
     ];
     this.levels = [
       {

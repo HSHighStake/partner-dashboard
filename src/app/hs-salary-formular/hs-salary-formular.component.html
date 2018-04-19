@@ -13,19 +13,16 @@
 					<div class="col-md-4">
 						<div id="type_of_development">
 							<h2>Type of development</h2>
-							<div *ngFor="let type of types">
+							<div *ngFor="let type of types; first as first">
+								<input
+									type="radio"
+									name="type_"
+									value="{{type.id}}"
+									id="type_{{type.id}}"
+									[checked]="first"
+									(change)="checkTypeOfDevelopment($event)"
+								>
 								<label for="type_{{type.id}}">{{type.label}}</label>
-								<input type="radio" name="type_" value="backend" id="type_{{type.id}}">
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div id="technology">
-							<h2>Technology</h2>
-							<div *ngFor="let technology of technologies">
-								<label for="technology_{{technology.id}}">{{technology.label}}</label>
-								<input type="radio" name="technology" value="backend" id="technology_{{technology.id}}">
 							</div>
 						</div>
 					</div>
@@ -33,9 +30,19 @@
 					<div class="col-md-4">
 						<div id="level">
 							<h2>Level of skills</h2>
-							<div *ngFor="let level of levels">
-								<input type="radio" name="level" value="{{level.id}}" id="level_{{level.id}}">
+							<div *ngFor="let level of levels; first as first">
+								<input type="radio" name="level" value="{{level.id}}" id="level_{{level.id}}" [checked]="first">
 								<label for="level_{{level.id}}">{{level.label}}</label>
+							</div>
+						</div>
+					</div>
+
+					<div *ngIf="!isFrontend" class="col-md-4">
+						<div id="technology">
+							<h2>Technology</h2>
+							<div *ngFor="let technology of technologies; first as first">
+								<input type="radio" name="technology" value="{{technology.id}}" id="technology_{{technology.id}}" [checked]="first">
+								<label for="technology_{{technology.id}}">{{technology.label}}</label>
 							</div>
 						</div>
 					</div>
