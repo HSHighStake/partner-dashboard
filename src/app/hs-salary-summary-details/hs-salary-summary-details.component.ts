@@ -5,14 +5,14 @@ import { CurrencyPipe } from '@angular/common';
 import { HsSalarySummaryData } from '../../models/dto/hs-salary-summary-data';
 
 @Component({
-  selector: 'app-hs-salary-summary',
-  templateUrl: './hs-salary-summary.component.html',
-  styleUrls: ['./hs-salary-summary.component.css']
+  selector: 'app-hs-salary-summary-details‚',
+  templateUrl: './hs-salary-summary-details.component.html',
+  styleUrls: ['./hs-salary-summary-details.component.css']
 })
 /*
  * @todo #3:45 Add this values from service as well
  */
-export class HsSalarySummaryComponent implements OnInit {
+export class HsSalarySummaryDetailsComponent implements OnInit {
   summary : HsSalarySummaryData;
 
   constructor(private dataService: HsProfitsCalculatorService) {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HsSalarySummaryComponent } from './hs-salary-summary.component';
+import { HsDownloadButtonsComponent } from './hs-download-buttons.component';
 
-describe('HsSalarySummaryComponent', () => {
-  let component: HsSalarySummaryComponent;
-  let fixture: ComponentFixture<HsSalarySummaryComponent>;
+describe('HsDownloadButtonsComponent', () => {
+  let component: HsDownloadButtonsComponent;
+  let fixture: ComponentFixture<HsDownloadButtonsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HsSalarySummaryComponent ]
+      declarations: [ HsDownloadButtonsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HsSalarySummaryComponent);
+    fixture = TestBed.createComponent(HsDownloadButtonsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

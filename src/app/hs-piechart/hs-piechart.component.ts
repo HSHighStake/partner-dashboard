@@ -18,7 +18,7 @@ export class HsPiechartComponent {
 	type = 'pie3d';
 	dataFormat = 'json';
 	dataSource;
-	title = 'HS High Stake income Composition';
+	title = 'Composition';
 
 	constructor(private dataService: HsProfitsCalculatorService) {
 		this.dataSource;
