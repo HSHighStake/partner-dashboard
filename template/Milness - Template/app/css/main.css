@@ -1665,7 +1665,7 @@ header {
 
 /*==========   Start Frequently Asked Questions Section ==========*/
 .faq {
-  background-image: url("../img/bg2.jpg"); }
+  background-image: url("../img/bg2.png"); }
   .faq .text-background {
     margin-bottom: 25px; }
 
@@ -1814,7 +1814,7 @@ footer {
 /*==========   Start pages ==========*/
 .page .content-section {
   padding-top: 180px;
-  background-image: url("../img/hero-bg.png"); }
+  background-image: url("../img/bg2.png"); }
 
 .page .content h1 {
   font-weight: 400; }
