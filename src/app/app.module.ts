@@ -23,6 +23,10 @@ import { HsSalaryFormularComponent } from './hs-salary-formular/hs-salary-formul
 import { HsSalarySummaryDetailsComponent } from './hs-salary-summary-details/hs-salary-summary-details.component';
 import { HsSalarySummaryOverviewComponent } from './hs-salary-summary-overview/hs-salary-summary-overview.component';
 import { HsDownloadButtonsComponent } from './hs-download-buttons/hs-download-buttons.component';
+import { HsHomeComponent } from './hs-home/hs-home.component';
+import { HsWorkingWithUsComponent } from './hs-working-with-us/hs-working-with-us.component';
+import { HsImprintComponent } from './hs-imprint/hs-imprint.component';
+import { HsSalaryHomeComponent } from './hs-salary-home/hs-salary-home.component';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -38,7 +42,11 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     HsSalaryFormularComponent,
     HsSalarySummaryDetailsComponent,
     HsSalarySummaryOverviewComponent,
-    HsDownloadButtonsComponent
+    HsDownloadButtonsComponent,
+    HsHomeComponent,
+    HsWorkingWithUsComponent,
+    HsImprintComponent,
+    HsSalaryHomeComponent
   ],
   imports: [
     BrowserModule,
