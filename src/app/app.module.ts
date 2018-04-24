@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HsPiechartComponent } from './hs-piechart/hs-piechart.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HsProfitsCalculatorService } from './hs-profits-calculator.service';
+import { HsFormularDataService } from './services/hs-formular-data.service';
 import { Http } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HsNavigationComponent } from './hs-navigation/hs-navigation.component';
@@ -47,7 +48,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
   ],
   providers: [
     HsProfitsCalculatorService,
-    Http
+    Http,
+    HsFormularDataService,
   ],
   bootstrap: [AppComponent]
 })

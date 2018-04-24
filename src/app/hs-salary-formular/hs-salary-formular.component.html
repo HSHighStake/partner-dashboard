@@ -12,12 +12,12 @@
 			</div>
 
 			<div class="contact-form">
-				<form id="contact-form" class="contact-form white-form">
+				<form id="contact-form" class="contact-form white-form" (change)="formChanged($event)">
 					<div class="col-md-4">
 						<div id="type_of_development">
 							<h2>Type of development</h2>
 							<div *ngFor="let type of types; first as first">
-								<input type="radio" name="type_" value="{{type.id}}" id="type_{{type.id}}" [checked]="first" (change)="checkTypeOfDevelopment($event)">
+								<input type="radio" name="type" value="{{type.id}}" id="type_{{type.id}}" [checked]="first" (change)="checkTypeOfDevelopment($event)">
 								<label for="type_{{type.id}}">{{type.label}}</label>
 							</div>
 						</div>

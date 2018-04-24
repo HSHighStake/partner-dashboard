@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HsFormularDataService } from '../services/hs-formular-data.service';
+
 @Component({
   selector: 'app-hs-salary-summary-overview',
   templateUrl: './hs-salary-summary-overview.component.html',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsSalarySummaryOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formularDataService: HsFormularDataService) {
+    formularDataService.currentData.subscribe(data => {
+      console.log('summary-overview component', data);
+      // data handling
+    })
+  }
 
   ngOnInit() {
   }

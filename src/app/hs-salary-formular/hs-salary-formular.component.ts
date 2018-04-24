@@ -6,6 +6,8 @@ import { SkillWithRequirement } from '../../models/skill-with-requirement';
 import { MainSkills } from '../../models/main-skills';
 import { ISkills } from '../../models/skills';
 
+import { HsFormularDataService, FormField } from '../services/hs-formular-data.service';
+
 @Component({
   selector: 'app-hs-salary-formular',
   templateUrl: './hs-salary-formular.component.html',
@@ -30,10 +32,14 @@ export class HsSalaryFormularComponent {
     this.isFrontend = event.target.value === 'frontend';
   }
 
+  formChanged(event: any) {
+    this.formularDataService.formDataUpdate(new FormField(event.target.name, event.target.value))
+  }
+
 
   // @todo #3 This should developed as a small service.
   // @todo #3 Whats the problem!
-  constructor() {
+  constructor(private formularDataService: HsFormularDataService) {
     this.types = [
       {
         label: 'Frontend',
