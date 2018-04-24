@@ -13,12 +13,11 @@ import 'rxjs/add/operator/map';
 })
 export class HsPiechartComponent {
 	id = 'chart1';
-	width = 1000;
-	height = 400;
+	width = 800;
+	height = 300;
 	type = 'pie3d';
 	dataFormat = 'json';
 	dataSource;
-	title = 'Composition';
 
 	constructor(private dataService: HsProfitsCalculatorService) {
 		this.dataSource;
