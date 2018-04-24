@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { HsProfitsCalculatorService } from '../hs-profits-calculator.service';
 import { FusionChart, EmptyFusionChartPieChartData } from '../../models/dto/fc-piechart';
 import { HsProfitsCalculatorData } from '../../models/dto/hs-profits-calculator-data';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import { HsProfitsCalculatorService } from '../hs-profits-calculator.service';
+import { HsFormularDataService } from '../services/hs-formular-data.service';
 
 @Component({
 	selector: 'app-hs-piechart',
@@ -19,7 +20,7 @@ export class HsPiechartComponent {
 	dataFormat = 'json';
 	dataSource;
 
-	constructor(private dataService: HsProfitsCalculatorService) {
+	constructor(private dataService: HsProfitsCalculatorService, private formularDataService: HsFormularDataService) {
 		this.dataSource;
 		this.dataSource =
 			new EmptyFusionChartPieChartData(
@@ -35,5 +36,10 @@ export class HsPiechartComponent {
 		dataService
 			.fusionChartPieChartData()
 			.subscribe(e => this.dataSource.data = e.data)
+
+		formularDataService.currentData.subscribe(data => {
+			console.log('piechart component', data)
+			// data handling
+		})
 	}
 }
