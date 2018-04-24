@@ -24,6 +24,7 @@ import { HsSalarySummaryOverviewComponent } from './hs-salary-summary-overview/h
 import { HsDownloadButtonsComponent } from './hs-download-buttons/hs-download-buttons.component';
 import { HsHomeComponent } from './hs-home/hs-home.component';
 import { HsWorkingWithUsComponent } from './hs-working-with-us/hs-working-with-us.component';
+import { HsImprintComponent } from './hs-imprint/hs-imprint.component';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -41,7 +42,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     HsSalarySummaryOverviewComponent,
     HsDownloadButtonsComponent,
     HsHomeComponent,
-    HsWorkingWithUsComponent
+    HsWorkingWithUsComponent,
+    HsImprintComponent
   ],
   imports: [
     BrowserModule,

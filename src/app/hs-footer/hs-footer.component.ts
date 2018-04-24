@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./hs-footer.component.css']
 })
 export class HsFooterComponent implements OnInit {
+	currentYear: number = (new Date()).getFullYear()
+	
 	constructor() {}
 
 	ngOnInit() {}
