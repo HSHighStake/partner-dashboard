@@ -47,7 +47,6 @@ export class HsPiechartComponent {
 
 
 		formularDataService.currentData.subscribe(data => {
-			console.log("Subscription", data);
 			this.hsFormData[data.name] = data.value;
 
 			dataService
