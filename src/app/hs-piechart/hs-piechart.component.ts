@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { HsProfitsCalculatorService } from '../hs-profits-calculator.service';
 import { HsFormularDataService } from '../services/hs-formular-data.service';
+import { HsFormData } from '../../models/hs-form-data';
 
 @Component({
 	selector: 'app-hs-piechart',
@@ -18,10 +19,12 @@ export class HsPiechartComponent {
 	height = 300;
 	type = 'pie3d';
 	dataFormat = 'json';
-	dataSource;
+	dataSource: EmptyFusionChartPieChartData;
+	hsFormData: HsFormData;
 
 	constructor(private dataService: HsProfitsCalculatorService, private formularDataService: HsFormularDataService) {
-		this.dataSource;
+		this.hsFormData = new HsFormData("java", "senior", "frontend");
+
 		this.dataSource =
 			new EmptyFusionChartPieChartData(
 				new FusionChart(
@@ -34,12 +37,27 @@ export class HsPiechartComponent {
 				);
 
 		dataService
-			.fusionChartPieChartData()
+			.fusionChartPieChartData(
+				new Date().getFullYear().toString(),
+				this.hsFormData.technology,
+				this.hsFormData.level,
+				this.hsFormData.type
+			)
 			.subscribe(e => this.dataSource.data = e.data)
 
+
 		formularDataService.currentData.subscribe(data => {
-			console.log('piechart component', data)
-			// data handling
+			console.log("Subscription", data);
+			this.hsFormData[data.name] = data.value;
+
+			dataService
+			.fusionChartPieChartData(
+				new Date().getFullYear().toString(),
+				this.hsFormData.technology,
+				this.hsFormData.level,
+				this.hsFormData.type
+			)
+			.subscribe(e => this.dataSource.data = e.data)
 		})
 	}
 }

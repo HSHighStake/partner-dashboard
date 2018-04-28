@@ -16,12 +16,9 @@ export class HsProfitsCalculatorService {
 		return HsProfitsCalculatorData.fromFake().toSummary();
 	}
 
-	public fusionChartPieChartData() {
+	public fusionChartPieChartData(year: string, technology: string, level: string, type: string) {
 		return this.httpClient
-			.post('/api/profit', {
-				qualificationLevel: 3,
-				year: 2018
-			})
+			.get('/api/profit/simulate?year=' + year + '&technology=' + technology + '&qualificationlevel=' + level + '&specialization=' + type)
 			.map(data =>
 				HsProfitsCalculatorData.fromObject(
 					data as any

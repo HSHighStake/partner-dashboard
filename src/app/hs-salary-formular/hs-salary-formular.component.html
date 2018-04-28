@@ -18,7 +18,7 @@
 					<div id="level">
 						<h2>Level of skills</h2>
 						<div *ngFor="let level of levels; first as first">
-							<input type="radio" name="level" value="{{level.id}}" id="level_{{level.id}}" [checked]="first">
+							<input type="radio" name="level" value="{{level.id}}" id="level_{{level.id}}" [checked]="first" (change)="setLevel($event)">
 							<label for="level_{{level.id}}">{{level.label}}</label>
 						</div>
 					</div>
@@ -27,7 +27,7 @@
 					<div id="technology">
 						<h2>Technology</h2>
 						<div *ngFor="let technology of technologies; first as first">
-							<input type="radio" name="technology" value="{{technology.id}}" id="technology_{{technology.id}}" [checked]="first">
+							<input type="radio" name="technology" value="{{technology.id}}" id="technology_{{technology.id}}" [checked]="first" (change)="setTechnology($event)">
 							<label for="technology_{{technology.id}}">{{technology.label}}</label>
 						</div>
 					</div>
